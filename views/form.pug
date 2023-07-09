@@ -1,0 +1,23 @@
+//- <form method= "POST" action= "/new">
+
+//-    put your inputs and buttons in here!
+
+//- form(role='form' method='POST' action='/new')
+<form method= "POST" action= "/new">
+h1 #{title}
+label Your Name 
+    |
+    |
+    input(name = "username" type='text' placeholder = 'Who are you?' required)
+br 
+br
+label Comment
+    |
+    |
+    input(name = "usermessage" type='text' placeholder = "Type something!" required)
+br
+br
+
+input(type='submit' value = "Submit")
+//- button(type='submit' href = 'http://localhost:3000/new' name = 'submit') Submit
+</form>
