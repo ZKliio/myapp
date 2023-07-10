@@ -35,20 +35,45 @@ router.get('/new', function(req, res, next){
   res.render('form', {title: 'Greetings User'})
 })
 
-router.post('/new', function(req, res, next){
+// router.post('/new', function(req, res, next){
 
-  const book = {
+//   const book = {
     
-    text: req.body.usermessage,
-    user: req.body.username,
-    added: new Date()
+//     text: req.body.usermessage,
+//     user: req.body.username,
+//     added: new Date()
+//   }
+  
+//   messages.push(book)
+//   console.log(messages)
+//   return res.redirect('/comments')
+  
+// })
+const mongoose = require('mongoose')
+const newbook = require('../models/bookModel')
+
+mongoose.set("strictQuery", false)
+router.post('/new', async function(req, res, next){
+  const booktoarray = {
+      text: req.body.usermessage,
+      user: req.body.username,
+      added: new Date()
+  }
+  try {
+    const book = await newbook.create({
+      userName: req.body.username,
+      userMessage: req.body.usermessage
+    })
+    messages.push(booktoarray)
+    res.status(200).json(book)
+  }
+  catch (err) {
+    console.log(err)
+    res.status(500).json({message: err.message})
   }
   
-  messages.push(book)
-  console.log(messages)
-  return res.redirect('/comments')
-  
 })
+
 
 
 
