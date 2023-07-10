@@ -1,5 +1,6 @@
-this is a barebones messaging board, written with Express, and the use of Express app generator for boiler plate code.
-Using this project, I have learnt the basic CRUD of a express:
+This a barebones messaging board, written with Express, and the use of Express app generator for boiler plate code.
+Using this project, I have applied the basic structure of an express app via MVC, and basic CRUD functions of an express app:
+
 Connecting an express app server to a mongoDB database
 - Basics of managing a database: Schemas and Query Strings
 - Basics of POST request: json calls and bodyparsing to retrieve user input to DB
